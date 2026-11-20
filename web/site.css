@@ -1,0 +1,1075 @@
+/*
+ * NetSurex — Site público: mejoras visuales
+ * Este archivo complementa el sistema taste-skill (system.css + cards.css + layout.css).
+ * No reemplaza tokens ni estructura del sistema base.
+ */
+
+/* =================================================================
+   ANIMACIONES DE ENTRADA — fade-in suave al cargar
+   ================================================================= */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero text entrance animation */
+.hero__text {
+  animation: fadeInUp 0.8s var(--ease) both;
+  animation-delay: 0.2s;
+}
+
+.hero__text h1 {
+  animation: fadeInUp 0.8s var(--ease) both;
+  animation-delay: 0.3s;
+}
+
+.hero__text .hero__lead {
+  animation: fadeInUp 0.8s var(--ease) both;
+  animation-delay: 0.5s;
+}
+
+.hero__text .btn-row {
+  animation: fadeInUp 0.8s var(--ease) both;
+  animation-delay: 0.7s;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero__text,
+  .hero__text h1,
+  .hero__text .hero__lead,
+  .hero__text .btn-row {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =================================================================
+   HERO — mejor presentación con overlay gradiente
+   ================================================================= */
+
+.hero--photo {
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__bg > img,
+.hero__bg > picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay sutil sobre la foto del hero para mejorar legibilidad */
+.hero--photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg,
+      rgba(11, 17, 32, 0.25) 0%,
+      rgba(11, 17, 32, 0.5) 50%,
+      rgba(11, 17, 32, 0.88) 100%
+    );
+  pointer-events: none;
+}
+
+.hero--photo > .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__text h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero__lead {
+  max-width: 56ch;
+  color: var(--p-inv-ink);
+  opacity: 0.95;
+  line-height: 1.6;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones del hero con mejor presencia */
+.hero__text .btn--primary {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding-inline: var(--s-6);
+  box-shadow: 0 4px 16px color-mix(in oklab, var(--action) 30%, transparent);
+}
+
+.hero__text .btn--secondary {
+  border: 1.5px solid color-mix(in oklab, var(--p-inv-ink) 40%, transparent);
+  color: var(--p-inv-ink);
+  backdrop-filter: blur(4px);
+  background: color-mix(in oklab, var(--p-inv-ink) 8%, transparent);
+}
+
+@media (hover: hover) {
+  .hero__text .btn--secondary:hover {
+    background: color-mix(in oklab, var(--p-inv-ink) 15%, transparent);
+    border-color: color-mix(in oklab, var(--p-inv-ink) 60%, transparent);
+  }
+}
+
+/* =================================================================
+   ESTIMATOR — diseño con tarjeta y resultado destacado
+   ================================================================= */
+
+.estimator {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  box-shadow: 0 4px 24px color-mix(in oklab, var(--ink) 6%, transparent);
+}
+
+.estimator__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+}
+
+@media (max-width: 639px) {
+  .estimator__fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Campos del estimador con mejor diseño */
+.estimator .field label {
+  font-weight: 500;
+  font-size: var(--t-small);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.estimator .field select,
+.estimator .field input {
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--r-md);
+  padding: var(--s-2) var(--s-3);
+  font-size: var(--t-body);
+  background: var(--bg);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.estimator .field select:focus,
+.estimator .field input:focus {
+  border-color: var(--action);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--action) 15%, transparent);
+  outline: none;
+}
+
+/* El resultado del estimador: número grande con gradiente */
+.estimator__result {
+  background: linear-gradient(135deg, color-mix(in oklab, var(--p-accent) 6%, var(--bg)), var(--bg));
+  border: 1.5px solid color-mix(in oklab, var(--p-accent) 20%, var(--line));
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  display: grid;
+  gap: var(--s-2);
+  box-shadow: 0 2px 12px color-mix(in oklab, var(--p-accent) 8%, transparent);
+}
+
+.estimator__result .t-stat {
+  background: linear-gradient(135deg, var(--p-accent), #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(24px, 2vw + 16px, 32px);
+  font-weight: 700;
+}
+
+/* Link de enviar estimado */
+.estimator .link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-weight: 500;
+  padding: var(--s-2) 0;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .estimator .link:hover {
+    border-bottom-color: var(--action);
+  }
+}
+
+/* =================================================================
+   CONTACT FORM — foto y formulario mejorados
+   ================================================================= */
+
+.contact__photo {
+  --ratio: 60%;
+  margin-top: var(--s-4);
+}
+
+/* El formulario de contacto como tarjeta flotante */
+.form.booking {
+  position: sticky;
+  top: calc(var(--nav) + var(--s-5));
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  box-shadow: 0 8px 32px color-mix(in oklab, var(--ink) 8%, transparent);
+}
+
+/* Campos del formulario con mejor diseño */
+.form.booking .field label {
+  font-weight: 500;
+  font-size: var(--t-small);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form.booking .field input,
+.form.booking .field select,
+.form.booking .field textarea {
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--r-md);
+  padding: var(--s-2) var(--s-3);
+  font-size: var(--t-body);
+  background: var(--bg);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.form.booking .field input:focus,
+.form.booking .field select:focus,
+.form.booking .field textarea:focus {
+  border-color: var(--action);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--action) 15%, transparent);
+  outline: none;
+  background: var(--surface);
+}
+
+.form.booking .field textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* Mensaje de estado del formulario */
+.form__status {
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-md);
+  font-weight: 500;
+  font-size: var(--t-small);
+  animation: fadeIn 0.3s var(--ease) both;
+}
+
+.form__status--success {
+  background: color-mix(in oklab, #22c55e 8%, var(--surface));
+  border: 1px solid color-mix(in oklab, #22c55e 30%, var(--line));
+  color: #166534;
+}
+
+html[data-grade="dark"] .form__status--success {
+  color: #86efac;
+}
+
+.form__status--error {
+  background: color-mix(in oklab, #ef4444 8%, var(--surface));
+  border: 1px solid color-mix(in oklab, #ef4444 30%, var(--line));
+  color: #991b1b;
+}
+
+html[data-grade="dark"] .form__status--error {
+  color: #fca5a5;
+}
+
+/* =================================================================
+   SECTIONS — separación visual entre secciones
+   ================================================================= */
+
+/* La banda oscura (#trabajo) ya usa ground-inverse del sistema.
+   Añadimos transiciones suaves entre secciones. */
+main > :is(section, .section) {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* =================================================================
+   TILES — media overflow control only (hover en sección BUTTONS)
+   ================================================================= */
+
+.tile__media {
+  overflow: hidden;
+}
+
+/* =================================================================
+   TRACKER — estado visual del tracker con timeline
+   ================================================================= */
+
+.tracker {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.tracker__input-row {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-end;
+}
+
+.tracker__input-row .field {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.tracker__input-row .field :is(input) {
+  width: 100%;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--r-md);
+  padding: var(--s-2) var(--s-3);
+  font-size: var(--t-body);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  background: var(--bg);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.tracker__input-row .field :is(input):focus {
+  border-color: var(--action);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--action) 15%, transparent);
+  outline: none;
+}
+
+.tracker__input-row .field label {
+  font-weight: 500;
+  font-size: var(--t-small);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tracker__result {
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  box-shadow: 0 4px 16px color-mix(in oklab, var(--ink) 5%, transparent);
+  animation: fadeInUp 0.4s var(--ease) both;
+}
+
+.tracker__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-3);
+  border-radius: 999px;
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.tracker__status--done {
+  background: color-mix(in oklab, #22c55e 12%, var(--bg));
+  color: #22c55e;
+}
+
+html[data-grade="dark"] .tracker__status--done {
+  background: color-mix(in oklab, #22c55e 15%, var(--card));
+  color: #86efac;
+}
+
+.tracker__status--now {
+  background: color-mix(in oklab, #3b82f6 12%, var(--bg));
+  color: #3b82f6;
+  box-shadow: 0 0 8px color-mix(in oklab, #3b82f6 20%, transparent);
+}
+
+html[data-grade="dark"] .tracker__status--now {
+  background: color-mix(in oklab, #3b82f6 15%, var(--card));
+  color: #93c5fd;
+}
+
+.tracker__status--next {
+  background: color-mix(in oklab, var(--ink) 6%, var(--bg));
+  color: var(--muted);
+}
+
+/* Tracker header */
+.tracker__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Tracker stages — timeline visual con línea conectora */
+.tracker__stages {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.tracker__stages > li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-4);
+  padding-left: calc(var(--s-4) * 3);
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+/* Línea vertical conectora */
+.tracker__stages::before {
+  content: '';
+  position: absolute;
+  left: var(--s-4);
+  top: var(--s-4);
+  bottom: var(--s-4);
+  width: 2px;
+  background: var(--line);
+  border-radius: 1px;
+  z-index: 0;
+}
+
+/* Punto en la línea */
+.tracker__stages > li::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--s-4) - 4px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+  border: 2px solid var(--surface);
+  z-index: 1;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tracker__stages > li[data-state="done"]::before {
+  background: #22c55e;
+  box-shadow: 0 0 6px color-mix(in oklab, #22c55e 40%, transparent);
+}
+
+.tracker__stages > li[data-state="now"]::before {
+  background: #3b82f6;
+  box-shadow: 0 0 10px color-mix(in oklab, #3b82f6 50%, transparent);
+  animation: trackerPulse 2s ease-in-out infinite;
+}
+
+@keyframes trackerPulse {
+  0%, 100% { box-shadow: 0 0 6px color-mix(in oklab, #3b82f6 30%, transparent); }
+  50% { box-shadow: 0 0 14px color-mix(in oklab, #3b82f6 50%, transparent); }
+}
+
+.tracker__stages > li[data-state="next"] {
+  opacity: 0.45;
+}
+
+.tracker__stages > li[data-state="done"] {
+  background: color-mix(in oklab, #22c55e 3%, transparent);
+}
+
+.tracker__stages > li[data-state="now"] {
+  background: color-mix(in oklab, #3b82f6 4%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tracker__stages > li[data-state="now"]::before {
+    animation: none;
+  }
+  .tracker__result {
+    animation: none;
+  }
+}
+
+/* =================================================================
+   NAV — mejora del menú split
+   ================================================================= */
+
+/* Sombra sutil en la nav para separarla del contenido */
+.nav {
+  box-shadow: 0 1px 0 var(--line);
+}
+
+/* =================================================================
+   FOOTER — mejor presentación del cierre
+   ================================================================= */
+
+.closing__cta h2 {
+  max-width: 26ch;
+}
+
+.close__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+}
+
+.close__media > img {
+  transition: transform 600ms var(--ease);
+}
+
+@media (hover: hover) {
+  .close__media:hover > img {
+    transform: scale(1.02);
+  }
+}
+
+/* =================================================================
+   GRADIENT TEXT — texto con gradiente cian → azul
+   ================================================================= */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--p-accent), #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =================================================================
+   GLOW — efecto de brillo sutil en elementos clave
+   ================================================================= */
+
+.glow {
+  box-shadow:
+    0 0 40px color-mix(in oklab, var(--p-accent) 15%, transparent),
+    0 0 80px color-mix(in oklab, var(--p-accent) 5%, transparent);
+}
+
+/* =================================================================
+   ANIMATIONS — animaciones sutiles
+   ================================================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px color-mix(in oklab, var(--p-accent) 10%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 40px color-mix(in oklab, var(--p-accent) 20%, transparent);
+  }
+}
+
+/* Animación de entrada para secciones (activada con data-enter) */
+[data-enter] .hero__text {
+  animation: fadeInUp 0.6s var(--ease) both;
+  animation-delay: 0.1s;
+}
+
+[data-enter] .hero__text > h1 {
+  animation: fadeInUp 0.6s var(--ease) both;
+  animation-delay: 0.15s;
+}
+
+[data-enter] .hero__text > p {
+  animation: fadeInUp 0.6s var(--ease) both;
+  animation-delay: 0.3s;
+}
+
+[data-enter] .hero__text > .btn-row {
+  animation: fadeInUp 0.6s var(--ease) both;
+  animation-delay: 0.45s;
+}
+
+/* =================================================================
+   BUTTONS — mejora de interacción con el usuario
+   ================================================================= */
+
+/* Efecto de elevación y brillo en botones primarios */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px color-mix(in oklab, var(--action) 20%, transparent);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, color-mix(in oklab, var(--action-ink) 20%, transparent) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+  .btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px color-mix(in oklab, var(--action) 30%, transparent);
+  }
+  .btn--primary:hover::before {
+    opacity: 1;
+  }
+}
+
+.btn--primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 1px 4px color-mix(in oklab, var(--action) 15%, transparent);
+  transition-duration: 80ms;
+}
+
+/* Botones secundarios con mejor interacción */
+.btn--secondary {
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .btn--secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--ink) 8%, transparent);
+  }
+}
+
+.btn--secondary:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 80ms;
+}
+
+/* Efecto ripple en botones (sin JavaScript, solo CSS) */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+    color-mix(in oklab, var(--action-ink) 25%, transparent) 0%,
+    transparent 70%);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.btn:active::after {
+  opacity: 1;
+  transform: scale(2.5);
+  transition: opacity 0s, transform 0.4s ease;
+}
+
+/* Links con mejor interacción */
+.link {
+  position: relative;
+  transition: color var(--dur) var(--ease), gap var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--action);
+    gap: var(--s-3);
+  }
+}
+
+/* Tiles con mejor interacción */
+.tile {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    color-mix(in oklab, var(--action) 5%, transparent),
+    color-mix(in oklab, var(--action) 0%, transparent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (hover: hover) {
+  a.tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px color-mix(in oklab, var(--ink) 12%, transparent);
+  }
+  a.tile:hover::before {
+    opacity: 1;
+  }
+  a.tile:hover .tile__media > img {
+    transform: scale(1.05);
+  }
+}
+
+a.tile:active {
+  transform: translateY(-2px) scale(0.99);
+  transition-duration: 80ms;
+}
+
+/* Nav links con mejor feedback */
+.nav__link {
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .nav__link:hover {
+    background: color-mix(in oklab, var(--ink) 5%, transparent);
+  }
+}
+
+.nav__link:active {
+  transform: scale(0.97);
+}
+
+/* Botón de la nav con mejor presencia */
+.nav__actions .btn--primary {
+  box-shadow: 0 2px 8px color-mix(in oklab, var(--action) 25%, transparent);
+}
+
+@media (hover: hover) {
+  .nav__actions .btn--primary:hover {
+    box-shadow: 0 4px 16px color-mix(in oklab, var(--action) 35%, transparent);
+    transform: translateY(-1px);
+  }
+}
+
+/* Footer links con mejor interacción */
+.footer ul a {
+  transition: color var(--dur) var(--ease), padding-inline var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .footer ul a:hover {
+    color: var(--action);
+    padding-inline: var(--s-1);
+    margin-inline: calc(-1 * var(--s-1));
+  }
+}
+
+/* Cards con mejor interacción */
+.card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: color-mix(in oklab, var(--p-accent) 30%, var(--line-strong));
+    box-shadow: 0 4px 24px color-mix(in oklab, var(--p-accent) 8%, transparent);
+    transform: translateY(-2px);
+  }
+}
+
+/* FAQ items con mejor interacción */
+.faq > :is(.faq__item, details) {
+  transition: background 0.2s ease, padding-inline 0.2s ease, margin-inline 0.2s ease;
+  padding-inline: var(--s-3);
+  margin-inline: calc(-1 * var(--s-3));
+  border-radius: var(--r-md);
+}
+
+@media (hover: hover) {
+  .faq > :is(.faq__item, details):hover {
+    background: color-mix(in oklab, var(--ink) 4%, transparent);
+  }
+}
+
+/* Form fields con mejor feedback */
+.field :is(input, select, textarea) {
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.field :is(input, select, textarea):focus {
+  border-color: var(--action);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--action) 15%, transparent);
+  outline: none;
+}
+
+/* Mobile: desactivar hover effects */
+@media (max-width: 639px) {
+  .btn--primary {
+    box-shadow: none;
+  }
+  .btn--primary:hover,
+  .btn--secondary:hover,
+  .nav__actions .btn--primary:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  a.tile:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--line-strong);
+  }
+  .footer ul a:hover {
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+}
+
+/* =================================================================
+   SECTION HEADINGS — mejor presentación de títulos
+   ================================================================= */
+
+.section-head h2 {
+  position: relative;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Línea decorativa bajo el título de sección */
+.section-head::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--p-accent), #3b82f6);
+  margin-top: var(--s-3);
+}
+
+/* =================================================================
+   PAGE HEAD — headers de páginas de contenido
+   ================================================================= */
+
+.page-head {
+  padding-bottom: var(--s-6);
+  margin-bottom: var(--s-6);
+  border-bottom: 1.5px solid var(--line-strong);
+}
+
+.page-head h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--s-3);
+}
+
+.page-head .t-lead {
+  max-width: 65ch;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* =================================================================
+   METHODOLOGY PAGE — timeline visual de fases
+   ================================================================= */
+
+.mo-ph__list {
+  display: grid;
+  gap: var(--s-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mo-ph__ch {
+  position: relative;
+  padding-left: var(--s-8);
+  border-left: 2px solid var(--line);
+}
+
+.mo-ph__ch::before {
+  content: attr(data-step);
+  position: absolute;
+  left: calc(var(--s-8) * -0.5);
+  top: 0;
+  width: var(--s-5);
+  height: var(--s-5);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--line-strong);
+  font-size: var(--t-small);
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.mo-ph__ch h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--s-2);
+}
+
+.mo-ph__pic {
+  margin: var(--s-4) 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px color-mix(in oklab, var(--ink) 6%, transparent);
+}
+
+.mo-ph__pic img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =================================================================
+   ABOUT PAGE — cards de equipo
+   ================================================================= */
+
+.develop {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px color-mix(in oklab, var(--ink) 8%, transparent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .develop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px color-mix(in oklab, var(--ink) 12%, transparent);
+  }
+}
+
+/* =================================================================
+   ROWS — lista de servicios y pólizas
+   ================================================================= */
+
+.rows {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.rows > li {
+  padding: var(--s-4);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+  .rows > li:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 2px 12px color-mix(in oklab, var(--ink) 4%, transparent);
+  }
+}
+
+.rows__name {
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--s-1);
+}
+
+.rows__value {
+  display: block;
+  margin-top: var(--s-2);
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+
+/* =================================================================
+   RESPONSIVE — ajustes móviles
+   ================================================================= */
+
+@media (max-width: 639px) {
+  .estimator {
+    padding: var(--s-4);
+  }
+
+  .estimator__result {
+    padding: var(--s-4);
+  }
+
+  .form.booking {
+    position: static;
+    padding: var(--s-4);
+    box-shadow: none;
+  }
+
+  .section-head::after {
+    width: 32px;
+    height: 2px;
+  }
+}
+
+/* =================================================================
+   SCROLLBAR — scrollbar personalizado
+   ================================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--p-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--p-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--p-accent);
+}
+
+/* =================================================================
+   SELECTION — selección de texto con color de marca
+   ================================================================= */
+
+::selection {
+  background: color-mix(in oklab, var(--p-accent) 30%, transparent);
+  color: var(--p-ink);
+}
+
+/* =================================================================
+   FOCUS — mejora del focus visible
+   ================================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--p-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* =================================================================
+   LOADING — spinner y skeleton
+   ================================================================= */
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--surface) 0%,
+    color-mix(in oklab, var(--surface) 90%, var(--ink)) 50%,
+    var(--surface) 100%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--r-sm);
+}

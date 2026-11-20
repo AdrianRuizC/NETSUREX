@@ -1,0 +1,3 @@
+[
+  { "check": "phone-number", "target": "div.wrap > div.grid.grid--top > div.span-6.stack-5 > a.link", "reason": "the client gave this WhatsApp Business number (+51 921 029 988) for the site; copy.md allows a phone the brief gives" }
+]

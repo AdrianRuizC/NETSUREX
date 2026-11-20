@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * NetSurex — Identidad visual
+ *  Azul corporativo / índigo profundo: #0F172A, #1E293B
+ *  Acento cian tecnológico / azul eléctrico: #06B6D4, #3B82F6
+ *  Superficies: pizarra oscuro #0B1120 (dark, por defecto) y #F8FAFC (light)
+ */
+@layer base {
+  :root {
+    /* Light Mode — portales corporativos y documentación */
+    --background: 210 40% 98%;          /* #F8FAFC */
+    --foreground: 222 47% 11%;          /* #0F172A */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 192 91% 36%;             /* cian legible sobre claro */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 19% 35%;
+    --accent: 221 83% 53%;              /* azul eléctrico */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 192 91% 36%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Mode — entornos técnicos, dashboards, monitoreo (por defecto) */
+    --background: 223 49% 8%;           /* #0B1120 */
+    --foreground: 210 40% 98%;          /* #F8FAFC */
+    --card: 222 47% 11%;                /* #0F172A */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 189 94% 43%;             /* #06B6D4 */
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;           /* #1E293B */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 68%;
+    --accent: 217 91% 60%;              /* #3B82F6 */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 189 94% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-foreground tracking-tight;
+    font-family: 'Gabarito', 'Figtree', system-ui, sans-serif;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  a {
+    @apply text-primary hover:text-accent;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Gabarito', 'Figtree', system-ui, sans-serif;
+  }
+
+  .gradient-bg-light {
+    background:
+      radial-gradient(900px 400px at 85% -10%, hsl(var(--primary) / 0.10), transparent 60%),
+      radial-gradient(700px 360px at 0% 110%, hsl(var(--accent) / 0.08), transparent 60%),
+      hsl(var(--background));
+  }
+  .gradient-bg-dark {
+    background:
+      radial-gradient(900px 420px at 85% -10%, hsl(var(--primary) / 0.16), transparent 60%),
+      radial-gradient(700px 380px at 0% 110%, hsl(var(--accent) / 0.12), transparent 60%),
+      hsl(var(--background));
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 border border-border hover:border-primary/40 bg-card;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium;
+  }
+  .nav-link.active {
+    @apply text-foreground;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-3 right-3 h-0.5 bg-primary scale-x-0 origin-left transition-transform duration-300 rounded-full;
+  }
+  .nav-link:hover::after, .nav-link.active::after {
+    @apply scale-x-100;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors font-semibold;
+  }
+  .btn-secondary {
+    @apply bg-transparent text-foreground border border-border px-6 py-3 rounded-lg hover:border-primary hover:text-primary transition-colors font-semibold;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Texto con gradiente corporativo (cian → azul eléctrico) */
+  .text-gradient {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary;
+  }
+
+  .field {
+    @apply w-full px-4 py-2.5 bg-background border border-input rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent placeholder:text-muted-foreground/60;
+  }
+
+  .prose {
+    @apply text-muted-foreground;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-foreground;
+  }
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  .prose a {
+    @apply text-primary hover:underline;
+  }
+  .prose strong {
+    @apply text-foreground font-semibold;
+  }
+  .prose ul, .prose ol {
+    @apply ml-6 my-4;
+  }
+  .prose li::marker {
+    @apply text-primary;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground;
+  }
+  .prose code {
+    @apply bg-secondary text-secondary-foreground px-1 py-0.5 rounded-sm text-sm;
+  }
+  .prose pre {
+    @apply bg-card p-4 rounded-md overflow-x-auto;
+  }
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

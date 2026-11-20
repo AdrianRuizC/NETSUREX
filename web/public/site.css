@@ -1,0 +1,92 @@
+/* NetSurex: page CSS, only what the kit lacks (taste-skill system.md: one system; page CSS inside visuals). */
+
+/* React renders into #root: let header, main and footer sit in the body's flow as the kit expects */
+#root { display: contents; }
+.booting { min-height: 100svh; background: var(--p-bg, #0b1120); }
+
+/* picture-develops: the section's one photograph on the split's right column, as tall as the text */
+.develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: min(560px, var(--ly-fit, 560px)); }
+.develop > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+@media (max-width: 1023px) { .develop { height: auto; aspect-ratio: 4 / 3; margin-top: var(--s-7); } }
+
+/* the booking form on --g-alt (sections.md, Booking) */
+.booking { background: var(--g-alt); padding: var(--s-7); border-radius: var(--r-lg); }
+@media (max-width: 639px) { .booking { padding: var(--s-5); } }
+.field--trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* the price estimate: two fields a row, the range set as a stat */
+.estimator__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
+.estimator__fields > .field--full { grid-column: 1 / -1; }
+@media (max-width: 639px) { .estimator__fields { grid-template-columns: minmax(0, 1fr); } }
+.estimator__result { min-height: 76px; display: grid; gap: var(--s-2); align-content: start; }
+
+/* the order lookup */
+.tracker__form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-4); align-items: end; }
+@media (max-width: 639px) { .tracker__form { grid-template-columns: minmax(0, 1fr); } }
+.tracker__stages { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.tracker__stages > li { display: flex; align-items: center; gap: var(--s-3); color: var(--muted); }
+.tracker__stages > li::before { content: ""; width: 10px; height: 10px; border-radius: 999px; border: 1px solid var(--line-strong); flex: none; }
+.tracker__stages > li[data-state="done"] { color: var(--ink); }
+.tracker__stages > li[data-state="done"]::before { background: var(--ink); border-color: var(--ink); }
+.tracker__stages > li[data-state="now"] { color: var(--ink); font-weight: 500; }
+.tracker__stages > li[data-state="now"]::before { background: var(--action); border-color: var(--action); }
+
+/* sub-pages: their sections grow with their content (the screen grid is the home's) */
+.section--auto { height: auto; min-height: 0; }
+.section--page { height: auto; min-height: 0; padding-bottom: 0; }
+.page-head { margin-bottom: var(--s-7); }
+.measure-wide { max-width: 880px; }
+.rows__link { color: var(--ink); text-decoration: none; }
+.rows__link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.rows__name--plain { font-weight: 400; }
+.tile__title { font: 500 var(--t-card)/1.3 var(--font-text); letter-spacing: -0.01em; }
+.tiles { row-gap: var(--s-8); }
+.link--back::after { content: none; }
+.link--back::before { content: "\2190"; }
+.sticky-media { align-self: start; }
+.faq__q { font: 500 var(--t-lead)/1.4 var(--font-text); letter-spacing: 0; }
+.article { display: grid; gap: var(--s-4); }
+.article h1 { margin-bottom: var(--s-4); }
+.article h2, .article__body h3 { font: 500 var(--t-lead)/1.4 var(--font-text); margin-top: var(--s-5); }
+.article__body { display: grid; gap: var(--s-4); }
+.article__body ul { margin: 0; padding-left: 1.2em; display: grid; gap: var(--s-2); }
+
+/* the grade switch in the legal row: a text button */
+.grade-toggle { background: none; border: 0; padding: 0; min-height: 44px; font: inherit; color: inherit; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line-strong); }
+.grade-toggle:hover { text-decoration-color: currentColor; }
+
+/* the booking form is a filled card: keep the kit's two-column form grid inside it */
+.form.booking.card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); padding: var(--s-7); }
+@media (max-width: 639px) { .form.booking.card { grid-template-columns: minmax(0, 1fr); padding: var(--s-5); } }
+
+/* phone: Nosotros and the questions stay on one screen */
+@media (max-width: 639px) {
+  #nosotros .develop { aspect-ratio: 16 / 9; margin-top: var(--s-6); }
+  #preguntas .faq__item:nth-child(n + 4) { display: none; }
+}
+
+/* pictures inside a column: the prices' recorder and the contact's desk, cut to the column */
+.prices__photo, .contact__photo { aspect-ratio: 16 / 9; }
+.prices__photo > img, .contact__photo > img { width: 100%; height: 100%; object-fit: cover; }
+
+/* the legal row: each item its own line on a phone, on the left line */
+@media (max-width: 639px) { .footer__legal { flex-direction: column; align-items: flex-start; } }
+
+/* phone: the three projects two-up at 165, their titles only, so the section is one screen */
+@media (max-width: 639px) {
+  #trabajo .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #trabajo .grid > .tile { grid-column: auto; }
+  #trabajo .tile > p { display: none; }
+  #trabajo .tile__head > h3 { font-size: var(--t-body); }
+}
+
+/* phone: the peek list's photograph keeps a 4:3 frame instead of running down the screen */
+@media (max-width: 639px) { #servicios .frame--fill { flex: none; height: auto; aspect-ratio: 4 / 3; } }
+
+/* under 400px the bar keeps the name and the menu; the main action is in the menu sheet (as system.css does with a phone bar) */
+@media (max-width: 399px) {
+  .nav:not(.is-open) .nav__actions { display: none; }
+  .nav:not(.is-open) .nav__toggle { margin-left: auto; }
+}
+@media (max-width: 639px) { .footer__legal .credits { margin-left: 0; white-space: normal; } }

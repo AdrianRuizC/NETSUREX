@@ -1,0 +1,21 @@
+{
+ "palettes": [],
+ "types": [],
+ "dealt": [
+  "gabarito",
+  "hanken",
+  "zilla"
+ ],
+ "moments": [
+  {
+   "id": "photo-chapters",
+   "at": "2026-11-12T21:15:26.009Z",
+   "seed": "b467899f"
+  },
+  {
+   "id": "picture-develops",
+   "at": "2026-11-12T21:15:26.009Z",
+   "seed": "b467899f"
+  }
+ ]
+}

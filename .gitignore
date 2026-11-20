@@ -1,0 +1,41 @@
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Archivos de Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Dependencias
+node_modules/
+
+# Archivos temporales
+*.log
+.DS_Store
+
+# Datos de navegador y pruebas
+.taste-skill/chrome-check/
+web/.taste-skill/chrome-check/
+
+# Archivos de caché
+.cache/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Dependencias
+node_modules/
+venv/
+__pycache__/
+
+# Datos privados del navegador
+web/.taste-skill/chrome-check/
+
+# Archivos temporales
+*.log
+.DS_Store

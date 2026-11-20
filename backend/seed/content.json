@@ -1,0 +1,713 @@
+{
+  "settings": {
+    "site": {
+      "name": "NetSurex",
+      "tagline": "Ingeniería de Software, Seguridad Electrónica e Infraestructura Tecnológica en un solo lugar",
+      "short_description": "Corporación tecnológica integral: software y apps multiplataforma, seguridad electrónica y CCTV, soporte técnico e infraestructura de redes para empresas y personas.",
+      "founded_label": "4 de mayo de 2026",
+      "contact": {
+        "email": "contacto@netsurex.com",
+        "privacy_email": "privacidad@netsurex.com",
+        "phone_display": "+51 921 029 988",
+        "whatsapp": "51921029988",
+        "coverage": "Atención presencial según zona de cobertura y soporte remoto a nivel nacional.",
+        "hours": [
+          {
+            "days": "Lunes a Viernes",
+            "time": "09:00 – 18:00"
+          },
+          {
+            "days": "Sábados",
+            "time": "09:00 – 13:00"
+          },
+          {
+            "days": "Domingos y feriados",
+            "time": "Solo pólizas con soporte prioritario"
+          }
+        ]
+      },
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "linkedin": "",
+        "github": "",
+        "x": ""
+      }
+    },
+    "quote": {
+      "currency": "USD",
+      "cctv": {
+        "perCamera": {
+          "analogHD": 75,
+          "ip": 120,
+          "ptz": 320
+        },
+        "recorder": {
+          "upTo8": 180,
+          "upTo16": 320,
+          "upTo32": 560
+        },
+        "installationPerCamera": 35,
+        "remoteSetup": 40,
+        "cloudBackupMonthly": 15
+      },
+      "software": {
+        "landing": [
+          350,
+          700
+        ],
+        "corporateWeb": [
+          700,
+          1500
+        ],
+        "ecommerce": [
+          1500,
+          3500
+        ],
+        "mobileApp": [
+          2500,
+          7000
+        ],
+        "multiplatformApp": [
+          3500,
+          9000
+        ],
+        "customSystem": [
+          3000,
+          10000
+        ],
+        "aiIntegration": [
+          800,
+          4000
+        ]
+      },
+      "support": {
+        "diagnosis": 0,
+        "preventiveMaintenance": 25,
+        "osInstall": 30,
+        "dataRecovery": [
+          60,
+          250
+        ]
+      }
+    }
+  },
+  "divisions": [
+    {
+      "id": "software",
+      "name": "Software & Apps",
+      "icon_name": "Code",
+      "summary": "Apps multiplataforma, web, sistemas a medida e IA.",
+      "position": 0,
+      "image": "/assets/img/photo-f62049414.webp"
+    },
+    {
+      "id": "seguridad",
+      "name": "Seguridad & CCTV",
+      "icon_name": "Cctv",
+      "summary": "Videovigilancia, monitoreo remoto y control de acceso.",
+      "position": 1,
+      "image": "/assets/img/photo-f105184200.webp"
+    },
+    {
+      "id": "soporte",
+      "name": "Soporte & Reparaciones",
+      "icon_name": "Wrench",
+      "summary": "Reparación, mantenimiento y sistemas operativos.",
+      "position": 2,
+      "image": "/assets/img/photo-f79707048.webp"
+    },
+    {
+      "id": "infraestructura",
+      "name": "Infraestructura & Redes",
+      "icon_name": "Network",
+      "summary": "Redes, consultoría y equipos a medida.",
+      "position": 3,
+      "image": "/assets/img/photo-f110874437.webp"
+    }
+  ],
+  "services": [
+    {
+      "id": "apps-multiplataforma",
+      "division_id": "software",
+      "audience": "Ambos",
+      "title": "Aplicaciones Multiplataforma y Móviles",
+      "description": "Nuestra especialidad insignia, liderada desde la dirección ejecutiva: apps nativas y multiplataforma de alto rendimiento para Android, iOS, web y escritorio desde bases de código optimizadas.",
+      "icon_name": "Smartphone",
+      "tags": [
+        "Android",
+        "iOS",
+        "Web",
+        "Escritorio",
+        "Código único"
+      ],
+      "position": 0
+    },
+    {
+      "id": "web-cloud",
+      "division_id": "software",
+      "audience": "Ambos",
+      "title": "Desarrollo Web y Plataformas Cloud",
+      "description": "Sitios web corporativos, portales complejos, tiendas e-commerce y aplicaciones web progresivas (PWA) escalables y listas para crecer.",
+      "icon_name": "Globe",
+      "tags": [
+        "Sitios corporativos",
+        "E-commerce",
+        "PWA",
+        "Cloud"
+      ],
+      "position": 1
+    },
+    {
+      "id": "sistemas-medida",
+      "division_id": "software",
+      "audience": "B2B",
+      "title": "Software de Escritorio y Sistemas a Medida",
+      "description": "Sistemas ERP, CRM, puntos de venta (POS), gestión de inventarios y software administrativo adaptado a las reglas de negocio de cada cliente.",
+      "icon_name": "Puzzle",
+      "tags": [
+        "ERP",
+        "CRM",
+        "POS",
+        "Inventarios"
+      ],
+      "position": 2
+    },
+    {
+      "id": "ia-automatizacion",
+      "division_id": "software",
+      "audience": "B2B",
+      "title": "Inteligencia Artificial y Automatización",
+      "description": "Asistentes virtuales, chatbots inteligentes, análisis predictivo de datos y automatización de flujos de trabajo integrados a tus sistemas.",
+      "icon_name": "Brain",
+      "tags": [
+        "Chatbots",
+        "Asistentes virtuales",
+        "Análisis predictivo",
+        "Automatización"
+      ],
+      "position": 3
+    },
+    {
+      "id": "cctv",
+      "division_id": "seguridad",
+      "audience": "Ambos",
+      "title": "Videovigilancia Inteligente (CCTV)",
+      "description": "Diseño, instalación y configuración de circuitos cerrados de televisión: cámaras IP, analógicas HD, domos PTZ y visión nocturna.",
+      "icon_name": "Cctv",
+      "tags": [
+        "Cámaras IP",
+        "Analógicas HD",
+        "Domos PTZ",
+        "Visión nocturna"
+      ],
+      "position": 4
+    },
+    {
+      "id": "monitoreo-remoto",
+      "division_id": "seguridad",
+      "audience": "Ambos",
+      "title": "Monitoreo Remoto y Analítica",
+      "description": "Visualización en tiempo real desde móviles y computadoras, detección de movimiento, reconocimiento facial y almacenamiento en NVR/DVR o en la nube.",
+      "icon_name": "MonitorSmartphone",
+      "tags": [
+        "Tiempo real",
+        "Detección de movimiento",
+        "Reconocimiento facial",
+        "NVR/DVR",
+        "Nube"
+      ],
+      "position": 5
+    },
+    {
+      "id": "control-acceso",
+      "division_id": "seguridad",
+      "audience": "Ambos",
+      "title": "Control de Acceso y Seguridad Perimetral",
+      "description": "Sistemas biométricos, cerraduras inteligentes, alarmas y cercos conectados para proteger accesos y perímetros.",
+      "icon_name": "Fingerprint",
+      "tags": [
+        "Biométricos",
+        "Cerraduras inteligentes",
+        "Alarmas",
+        "Cercos conectados"
+      ],
+      "position": 6
+    },
+    {
+      "id": "reparacion-hardware",
+      "division_id": "soporte",
+      "audience": "Ambos",
+      "title": "Reparación de Hardware",
+      "description": "Diagnóstico avanzado y reparación de PCs, laptops, servidores, consolas y dispositivos móviles: componentes, soldadura, pantallas, baterías y placas.",
+      "icon_name": "Cpu",
+      "tags": [
+        "PC",
+        "Laptops",
+        "Servidores",
+        "Consolas",
+        "Móviles"
+      ],
+      "position": 7
+    },
+    {
+      "id": "mantenimiento",
+      "division_id": "soporte",
+      "audience": "Ambos",
+      "title": "Mantenimiento Preventivo y Correctivo",
+      "description": "Limpieza física interna, cambio de pasta térmica, optimización de rendimiento, recuperación de datos y prevención de fallos críticos.",
+      "icon_name": "Wrench",
+      "tags": [
+        "Limpieza interna",
+        "Pasta térmica",
+        "Optimización",
+        "Recuperación de datos"
+      ],
+      "position": 8
+    },
+    {
+      "id": "soporte-so",
+      "division_id": "soporte",
+      "audience": "B2C",
+      "title": "Soporte de Software y Sistemas Operativos",
+      "description": "Formateo, instalación y configuración de Windows, Linux y macOS, eliminación de malware/virus y respaldo de información.",
+      "icon_name": "HardDrive",
+      "tags": [
+        "Windows",
+        "Linux",
+        "macOS",
+        "Malware",
+        "Respaldos"
+      ],
+      "position": 9
+    },
+    {
+      "id": "redes",
+      "division_id": "infraestructura",
+      "audience": "Ambos",
+      "title": "Redes y Conectividad",
+      "description": "Cableado estructurado, configuración de routers y switches, puntos de acceso Wi-Fi de largo alcance, enlaces inalámbricos y redes empresariales seguras.",
+      "icon_name": "Network",
+      "tags": [
+        "Cableado estructurado",
+        "Wi-Fi",
+        "Switches",
+        "Enlaces inalámbricos"
+      ],
+      "position": 10
+    },
+    {
+      "id": "consultoria",
+      "division_id": "infraestructura",
+      "audience": "B2B",
+      "title": "Consultoría y Transformación Digital",
+      "description": "Asesoría estratégica en adquisición de equipamiento, migración a la nube, ciberseguridad básica y avanzada, y modernización de infraestructura física y digital.",
+      "icon_name": "Lightbulb",
+      "tags": [
+        "Migración cloud",
+        "Ciberseguridad",
+        "Modernización",
+        "Asesoría"
+      ],
+      "position": 11
+    },
+    {
+      "id": "ensamblaje",
+      "division_id": "infraestructura",
+      "audience": "Ambos",
+      "title": "Ensamblaje y Equipamiento a Medida",
+      "description": "Armado de workstations, servidores locales y equipos de alto rendimiento según los requerimientos técnicos de cada cliente.",
+      "icon_name": "Server",
+      "tags": [
+        "Workstations",
+        "Servidores",
+        "Alto rendimiento"
+      ],
+      "position": 12
+    }
+  ],
+  "plans": [
+    {
+      "id": "poliza-soporte-b2b",
+      "audience": "B2B",
+      "title": "Póliza de Soporte Técnico Empresarial",
+      "icon_name": "Building2",
+      "description": "Mantenimiento preventivo periódico de equipos de cómputo, redes y servidores con tiempos de respuesta prioritarios.",
+      "features": [
+        "Visitas de mantenimiento preventivo programadas",
+        "Cobertura de equipos de cómputo, redes y servidores",
+        "Tiempos de respuesta prioritarios",
+        "Reporte técnico periódico del estado de los equipos"
+      ],
+      "highlighted": false,
+      "position": 0
+    },
+    {
+      "id": "plan-cctv",
+      "audience": "Ambos",
+      "title": "Plan de Monitoreo y Mantenimiento CCTV",
+      "icon_name": "Cctv",
+      "description": "Revisión periódica de cámaras, respaldos en la nube, limpieza óptica y verificación de grabadores NVR/DVR.",
+      "features": [
+        "Revisión periódica de cámaras y ángulos",
+        "Respaldos de grabaciones en la nube",
+        "Limpieza óptica de lentes y domos",
+        "Verificación de grabadores NVR/DVR y discos"
+      ],
+      "highlighted": true,
+      "position": 1
+    },
+    {
+      "id": "sla-software",
+      "audience": "Ambos",
+      "title": "Soporte y Evolución de Software (SLA)",
+      "icon_name": "RefreshCw",
+      "description": "Actualizaciones continuas, alojamiento en la nube, monitoreo de servidores y soporte para aplicaciones desarrolladas por NetSurex.",
+      "features": [
+        "Actualizaciones y mejoras continuas",
+        "Alojamiento en la nube y monitoreo de servidores",
+        "Soporte técnico con acuerdo de nivel de servicio",
+        "Copias de seguridad y continuidad operativa"
+      ],
+      "highlighted": false,
+      "position": 2
+    }
+  ],
+  "methodology": [
+    {
+      "step": "01",
+      "title": "Diagnóstico y Levantamiento",
+      "description": "Evaluación técnica en sitio o remota de los requerimientos de software, seguridad o fallos de hardware.",
+      "icon_name": "Search",
+      "position": 0,
+      "image": "/assets/img/photo-f73770371.webp"
+    },
+    {
+      "step": "02",
+      "title": "Arquitectura y Cotización Transparente",
+      "description": "Diseño de la solución (planos de red/CCTV, prototipos de app o presupuesto de reparación) con tiempos y costos claros.",
+      "icon_name": "FileText",
+      "position": 1,
+      "image": "/assets/img/photo-f61681597.webp"
+    },
+    {
+      "step": "03",
+      "title": "Implementación y Desarrollo",
+      "description": "Ejecución bajo estándares de calidad con reportes de avance en tiempo real.",
+      "icon_name": "Settings",
+      "position": 2,
+      "image": "/assets/img/photo-f4071999.webp"
+    },
+    {
+      "step": "04",
+      "title": "Entrega, Capacitación y Garantía",
+      "description": "Puesta en marcha, entrega de documentación y accesos, capacitación al usuario y activación de la póliza de garantía.",
+      "icon_name": "ShieldCheck",
+      "position": 3,
+      "image": "/assets/img/photo-f107886263.webp"
+    }
+  ],
+  "projects": [
+    {
+      "id": "app-multiplataforma-servicios",
+      "title": "App Multiplataforma de Gestión de Servicios",
+      "type": "Móvil",
+      "short_description": "Prototipo funcional de una app con una sola base de código para Android, iOS, web y escritorio: agenda, seguimiento de órdenes y notificaciones.",
+      "tags": [
+        "Multiplataforma",
+        "Android",
+        "iOS",
+        "Web",
+        "Escritorio"
+      ],
+      "challenge": "Negocios de servicios que necesitan que clientes y técnicos compartan la misma información en el celular, la computadora y la web, sin mantener varias aplicaciones distintas.",
+      "solution": "Una arquitectura multiplataforma desde una base de código optimizada: el mismo producto se publica en tiendas móviles, en navegador y como app de escritorio, con sincronización en la nube.",
+      "key_actions": [
+        "Diseño UX/UI adaptado a móvil, tablet y escritorio.",
+        "Agenda de citas y seguimiento de órdenes en tiempo real.",
+        "Notificaciones push y avisos por estado.",
+        "Panel administrativo web para el negocio."
+      ],
+      "results": "Demostración de capacidad: un solo desarrollo, todas las pantallas, con menor costo de mantenimiento y actualizaciones simultáneas.",
+      "technologies": [
+        "Multiplataforma",
+        "API REST",
+        "Cloud",
+        "Notificaciones push"
+      ],
+      "division_id": "software",
+      "image": "/assets/img/photo-f61807001.webp",
+      "position": 0
+    },
+    {
+      "id": "sistema-pos-inventarios",
+      "title": "Sistema de Punto de Venta e Inventarios",
+      "type": "Software",
+      "short_description": "Sistema administrativo a medida con punto de venta, control de stock, compras y reportes, adaptado a las reglas de negocio de cada comercio.",
+      "tags": [
+        "POS",
+        "Inventarios",
+        "Reportes",
+        "ERP ligero"
+      ],
+      "challenge": "Comercios que controlan ventas e inventario en hojas de cálculo, con diferencias de stock y poca visibilidad de su rentabilidad.",
+      "solution": "Un sistema de gestión con módulos de ventas, inventario, compras, clientes y reportes, con roles de usuario y respaldo automático.",
+      "key_actions": [
+        "Levantamiento de procesos y reglas de negocio.",
+        "Módulos de ventas, inventario y compras.",
+        "Reportes de ventas y alertas de stock mínimo.",
+        "Capacitación del personal y soporte posterior."
+      ],
+      "results": "Entregable tipo: sistema instalado, base de datos inicial cargada, manual de uso y activación de soporte SLA.",
+      "technologies": [
+        "Software a medida",
+        "Base de datos",
+        "Reportes",
+        "Respaldos"
+      ],
+      "division_id": "software",
+      "image": "/assets/img/photo-f62049414.webp",
+      "position": 1
+    },
+    {
+      "id": "tienda-ecommerce",
+      "title": "Tienda E-commerce y Sitio Corporativo",
+      "type": "Web",
+      "short_description": "Tienda en línea responsive con catálogo, carrito y panel de pedidos, integrada a un sitio corporativo optimizado para buscadores.",
+      "tags": [
+        "E-commerce",
+        "Sitio corporativo",
+        "PWA",
+        "SEO"
+      ],
+      "challenge": "Marcas que necesitan vender en línea y presentarse con una imagen profesional sin depender solo de redes sociales.",
+      "solution": "Plataforma web escalable con catálogo administrable, pasarela de pago, gestión de pedidos y versión instalable como PWA.",
+      "key_actions": [
+        "Diseño de identidad web alineada a la marca.",
+        "Catálogo con filtros y fichas de producto.",
+        "Carrito, checkout y gestión de pedidos.",
+        "Optimización de rendimiento y posicionamiento."
+      ],
+      "results": "Entregable tipo: tienda publicada, panel de administración, capacitación y plan de alojamiento y soporte.",
+      "technologies": [
+        "Web",
+        "PWA",
+        "Cloud",
+        "Pasarela de pago"
+      ],
+      "division_id": "software",
+      "image": "/assets/img/photo-f26575836.webp",
+      "position": 2
+    },
+    {
+      "id": "cctv-comercio",
+      "title": "Diseño e Instalación CCTV para Comercio",
+      "type": "Seguridad",
+      "short_description": "Diagrama de cobertura con cámaras IP y domo PTZ, grabador NVR, monitoreo desde el celular y respaldo en la nube.",
+      "tags": [
+        "CCTV",
+        "Cámaras IP",
+        "PTZ",
+        "NVR",
+        "Monitoreo remoto"
+      ],
+      "challenge": "Locales comerciales con puntos ciegos, grabaciones que no se pueden consultar a distancia y equipos sin mantenimiento.",
+      "solution": "Estudio de ángulos y cobertura, plano de ubicación de cámaras, instalación con cableado ordenado, configuración de visualización remota y analítica de movimiento.",
+      "key_actions": [
+        "Levantamiento en sitio y plano de cobertura.",
+        "Instalación de cámaras IP, domo PTZ y grabador NVR.",
+        "Configuración de app móvil y alertas de movimiento.",
+        "Activación del plan de monitoreo y mantenimiento CCTV."
+      ],
+      "results": "Entregable tipo: sistema operativo, accesos entregados al cliente, capacitación y garantía activa.",
+      "technologies": [
+        "Cámaras IP",
+        "Domo PTZ",
+        "NVR",
+        "Respaldo en la nube"
+      ],
+      "division_id": "seguridad",
+      "image": "/assets/img/photo-f154234052.webp",
+      "position": 3
+    },
+    {
+      "id": "red-corporativa",
+      "title": "Red Corporativa con Cableado Estructurado",
+      "type": "Infraestructura",
+      "short_description": "Diseño de red para oficina: cableado estructurado, rack, switches administrables y Wi-Fi de largo alcance segmentado.",
+      "tags": [
+        "Cableado estructurado",
+        "Switches",
+        "Wi-Fi",
+        "Redes seguras"
+      ],
+      "challenge": "Oficinas con cortes de conexión, Wi-Fi débil y una red sin orden ni separación entre invitados y personal.",
+      "solution": "Red cableada certificable, rack organizado, puntos de acceso de largo alcance y segmentación de redes para personal, invitados y cámaras.",
+      "key_actions": [
+        "Plano de red y presupuesto transparente.",
+        "Tendido de cableado estructurado y etiquetado.",
+        "Configuración de router, switches y puntos de acceso.",
+        "Documentación de la red y póliza de soporte empresarial."
+      ],
+      "results": "Entregable tipo: red documentada, contraseñas y accesos entregados, y soporte con tiempos de respuesta prioritarios.",
+      "technologies": [
+        "Cableado estructurado",
+        "Switches",
+        "Access points",
+        "VLAN"
+      ],
+      "division_id": "infraestructura",
+      "image": "/assets/img/photo-f4556037.webp",
+      "position": 4
+    },
+    {
+      "id": "mantenimiento-equipos",
+      "title": "Programa de Mantenimiento de Equipos",
+      "type": "Soporte",
+      "short_description": "Mantenimiento preventivo periódico de computadoras y servidores con reporte técnico y seguimiento de cada equipo.",
+      "tags": [
+        "Mantenimiento preventivo",
+        "Hardware",
+        "Reportes",
+        "Póliza"
+      ],
+      "challenge": "Equipos lentos, sobrecalentados o con fallas que detienen la operación y generan pérdida de información.",
+      "solution": "Calendario de mantenimiento, limpieza interna, cambio de pasta térmica, optimización y respaldos, con inventario de equipos y reporte de estado.",
+      "key_actions": [
+        "Inventario y diagnóstico inicial de equipos.",
+        "Limpieza física, pasta térmica y optimización.",
+        "Respaldo de información crítica.",
+        "Reporte técnico y recomendaciones de renovación."
+      ],
+      "results": "Entregable tipo: equipos optimizados, historial por equipo y próxima visita programada.",
+      "technologies": [
+        "Diagnóstico de hardware",
+        "Optimización",
+        "Respaldos"
+      ],
+      "division_id": "soporte",
+      "image": "/assets/img/photo-f16007442-960.webp",
+      "position": 5
+    }
+  ],
+  "posts": [
+    {
+      "id": "relanzamiento-netsurex",
+      "title": "NetSurex inicia su relanzamiento como corporación tecnológica integral",
+      "excerpt": "Tras una etapa de reestructuración estratégica, NetSurex amplía sus capacidades y presenta un ecosistema completo de software, seguridad, soporte e infraestructura.",
+      "date": "2026-11-12",
+      "author": "Adrian Alejandro Ruiz Carreño",
+      "category": "Corporativo",
+      "icon_name": "Rocket",
+      "tags": [
+        "NetSurex",
+        "Relanzamiento",
+        "Corporativo"
+      ],
+      "content": "<p>NetSurex nació el <strong>4 de mayo de 2026</strong> con una idea clara: ofrecer tecnología de nivel empresarial con atención directa y cercana. Hoy damos un paso más.</p>\n      <h3>Una evolución planificada</h3>\n      <p>Durante los últimos meses reestructuramos nuestro modelo corporativo para ampliar capacidades y escalar con orden. El resultado es un ecosistema integral organizado en cuatro divisiones: <strong>Software &amp; Apps</strong>, <strong>Seguridad &amp; CCTV</strong>, <strong>Soporte &amp; Reparaciones</strong> e <strong>Infraestructura &amp; Redes</strong>.</p>\n      <h3>Para empresas y para personas</h3>\n      <p>Atendemos a empresas, comercios e instituciones (B2B) y también a hogares y usuarios finales (B2C), con planes de mantenimiento continuo que dan tranquilidad después de cada entrega.</p>\n      <h3>Cómo trabajamos</h3>\n      <p>Cada proyecto sigue cuatro fases: diagnóstico, arquitectura y cotización transparente, implementación con reportes de avance y entrega con capacitación y garantía.</p>\n      <p>Gracias por acompañarnos en esta nueva etapa.</p>"
+    },
+    {
+      "id": "elegir-sistema-cctv",
+      "title": "Cómo elegir un sistema CCTV para tu negocio u hogar",
+      "excerpt": "Cámaras IP o analógicas HD, domos PTZ, NVR o nube: una guía práctica para elegir la videovigilancia adecuada.",
+      "date": "2026-11-05",
+      "author": "Equipo NetSurex",
+      "category": "Seguridad & CCTV",
+      "icon_name": "Cctv",
+      "tags": [
+        "CCTV",
+        "Videovigilancia",
+        "Seguridad electrónica"
+      ],
+      "content": "<p>Un buen sistema de videovigilancia empieza por entender qué quieres proteger, no por la cámara más cara.</p>\n      <h3>1. Define la cobertura</h3>\n      <p>Identifica accesos, cajas, estacionamientos y zonas sin luz. Un plano de cobertura evita puntos ciegos y cámaras innecesarias.</p>\n      <h3>2. IP o analógica HD</h3>\n      <p>Las cámaras <strong>IP</strong> ofrecen mayor resolución y analítica; las <strong>analógicas HD</strong> son una opción económica y confiable para instalaciones sencillas. Los <strong>domos PTZ</strong> permiten girar y hacer zoom en áreas amplias.</p>\n      <h3>3. Dónde se guardan las grabaciones</h3>\n      <p>Un grabador <strong>NVR/DVR</strong> almacena localmente; el respaldo en la <strong>nube</strong> protege la evidencia si el equipo es robado o dañado. Lo ideal es combinar ambos.</p>\n      <h3>4. Mantenimiento</h3>\n      <p>Lentes sucios, discos llenos o grabadores desconfigurados son fallas comunes. Un plan de mantenimiento CCTV mantiene el sistema funcionando cuando más lo necesitas.</p>"
+    },
+    {
+      "id": "mantenimiento-preventivo",
+      "title": "Mantenimiento preventivo: por qué tu computadora lo necesita",
+      "excerpt": "Polvo, temperatura y falta de respaldos son la causa de muchas fallas. Así prevenimos que tu equipo te deje sin trabajar.",
+      "date": "2026-10-28",
+      "author": "Equipo NetSurex",
+      "category": "Soporte & Reparaciones",
+      "icon_name": "Wrench",
+      "tags": [
+        "Mantenimiento",
+        "Hardware",
+        "Soporte técnico"
+      ],
+      "content": "<p>La mayoría de fallas de hardware no aparecen de golpe: se acumulan. El mantenimiento preventivo las detiene a tiempo.</p>\n      <h3>Qué incluye</h3>\n      <ul>\n        <li><strong>Limpieza física interna</strong> de ventiladores, disipadores y fuentes.</li>\n        <li><strong>Cambio de pasta térmica</strong> para bajar la temperatura del procesador.</li>\n        <li><strong>Optimización</strong> del sistema operativo y revisión de malware.</li>\n        <li><strong>Respaldo</strong> de la información importante.</li>\n      </ul>\n      <h3>Cada cuánto</h3>\n      <p>En hogares, una o dos veces al año. En empresas, lo recomendable es una póliza con visitas periódicas y tiempos de respuesta prioritarios.</p>"
+    },
+    {
+      "id": "apps-multiplataforma",
+      "title": "Apps multiplataforma: una base de código, todas las pantallas",
+      "excerpt": "Cómo una arquitectura multiplataforma permite llegar a Android, iOS, web y escritorio con menor costo y mantenimiento.",
+      "date": "2026-10-20",
+      "author": "Adrian Alejandro Ruiz Carreño",
+      "category": "Software & Apps",
+      "icon_name": "Smartphone",
+      "tags": [
+        "Apps",
+        "Multiplataforma",
+        "Desarrollo de software"
+      ],
+      "content": "<p>Desarrollar una app distinta para cada sistema multiplica costos y tiempos. El desarrollo multiplataforma lo resuelve.</p>\n      <h3>Ventajas</h3>\n      <ul>\n        <li><strong>Una sola base de código</strong> para Android, iOS, web y escritorio.</li>\n        <li><strong>Actualizaciones simultáneas</strong> en todas las plataformas.</li>\n        <li><strong>Menor costo de mantenimiento</strong> y un equipo más ágil.</li>\n      </ul>\n      <h3>Cuándo conviene</h3>\n      <p>Es ideal para apps de negocio, reservas, ventas, seguimiento de órdenes o servicios internos. Para necesidades muy específicas de hardware evaluamos componentes nativos dentro de la misma arquitectura.</p>\n      <p>Es la especialidad insignia de NetSurex y el área que lidera directamente nuestra dirección ejecutiva.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué servicios ofrece NetSurex?",
+      "answer": "Cuatro divisiones: software y apps, seguridad electrónica y CCTV, soporte técnico y reparaciones, e infraestructura y redes. Además, pólizas de mantenimiento para empresas y hogares.",
+      "position": 0
+    },
+    {
+      "question": "¿Los servicios son para empresas o también para hogares?",
+      "answer": "Sí. Desarrollamos sistemas y redes para empresas, comercios e instituciones, y reparamos equipos o instalamos cámaras en hogares.",
+      "position": 1
+    },
+    {
+      "question": "¿Cómo avanza un proyecto de software o una instalación?",
+      "answer": "En cuatro fases: diagnóstico, arquitectura y cotización, implementación con reportes de avance, y entrega con capacitación y garantía.",
+      "position": 2
+    },
+    {
+      "question": "¿Qué incluye el diagnóstico técnico?",
+      "answer": "Una evaluación técnica en sitio o remota de lo que necesitas o de la falla del equipo. Con ella preparamos la cotización con tiempos y costos.",
+      "position": 3
+    },
+    {
+      "question": "¿Qué garantía tienen las reparaciones y el software?",
+      "answer": "Todo trabajo tiene garantía: la pieza y la mano de obra en reparaciones, la instalación en CCTV y redes, y la corrección de errores en software. El plazo va en cada cotización.",
+      "position": 4
+    },
+    {
+      "question": "¿Qué son las pólizas de mantenimiento?",
+      "answer": "Planes de continuidad: soporte técnico empresarial, monitoreo y mantenimiento de CCTV, y soporte y evolución de software con acuerdo de servicio.",
+      "position": 5
+    },
+    {
+      "question": "¿Puedo ver el estado de mi reparación?",
+      "answer": "Sí. Escribe el código de tu orden en la sección «Estado de tu reparación o proyecto» de la página de inicio.",
+      "position": 6
+    },
+    {
+      "question": "¿Hasta dónde llega el soporte técnico?",
+      "answer": "Atención presencial según la zona y soporte remoto a nivel nacional para software, configuración y monitoreo. Pregúntanos por tu ubicación.",
+      "position": 7
+    },
+    {
+      "question": "¿Cómo cuidan la información de mis equipos?",
+      "answer": "Los accesos a tus equipos, cámaras y sistemas se entregan solo al titular, y lo que desarrollamos sigue buenas prácticas de seguridad.",
+      "position": 8
+    }
+  ],
+  "team": [
+    {
+      "id": "adrian-ruiz",
+      "name": "Adrian Alejandro Ruiz Carreño",
+      "role": "Fundador y Director Ejecutivo (CEO)",
+      "bio": "Con 21 años y amplia experiencia en el desarrollo de aplicaciones multiplataforma, lidera la estrategia de innovación, la arquitectura de software y la expansión multisectorial de NetSurex con una visión joven, ágil y altamente técnica.",
+      "image": "/uploads/adrian2.jpeg",
+      "linkedin": "https://www.linkedin.com/in/adri%C3%A1n-alejandro-ruiz-carre%C3%B1o-0968b6240/",
+      "position": 0
+    }
+  ]
+}

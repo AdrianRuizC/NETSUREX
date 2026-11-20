@@ -1,0 +1,201 @@
+consistency  http://localhost:5173/
+--quick: not checked: scroll-linked (stepping), scroll-reveal (the reveal walk; IntersectionObserver reveals are read), hover-spill, hidden-visual, loop-pause, forms, reduced-motion, the dead-IntersectionObserver walk (hidden content is read with scripts off and under reduced motion), hover-move. Still told: IntersectionObserver reveals (scroll-reveal), held sections (pinned) and CSS scroll timelines (scroll-linked); faults inside held or [data-big-scene] sections are WARNs
+
+1440x900  16 screens, 1 held section  8 FAIL  22 WARN
+  FAIL no-visual       section#preguntas  "Preguntas frecuentes sobre NetSurex"
+       no picture, effect or mock in this section; a feature section needs a visual  [1440-20-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL card-family     section#preguntas > div.wrap > div.grid.grid--top > div.faq.span-6  "¿Qué servicios ofrece NetSurex?"
+       10 cards of one kind (.span-6) set their titles in 2 faces: figtree (1, like "¿Qué servicios ofrece Ne"), gabarito (6, like "Precios y pólizas")  [1440-22-card-family.jpg]
+       fix: draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)
+  FAIL card-family     section#precios > div.wrap > div.grid.grid--top > div.span-6.start-7  "Pólizas de mantenimiento"
+       5 cards of one kind (.start-7) set their titles in 2 faces: gabarito (1, like "Pólizas de mantenimiento"), figtree (1, like "¿Qué servicios ofrece Ne")  [1440-14-card-family.jpg]
+       fix: draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)
+  FAIL copy-headings   h2#nosotros-h  "Quién dirige NetSurex"
+       "Quién dirige NetSurex" names no product, part, place or section (5 headings like it; at most one brand line per page) (and 4 more like it: "Preguntas frecuentes sob", "¿Atienden a empresas y t", "¿Cómo es el proceso de t", "¿Qué incluye el diagnóst")  [1440-18-copy-headings.jpg]
+       fix: name the thing in every heading: the product, a part, the place or a section noun
+  FAIL heading-scale   div.wrap > div.grid.grid--top > div.span-6.start-7 > h3  "Pólizas de mantenimiento"
+       h3 headings in 2 sizes, 20px ("App Multiplataforma de G") to 28px (x1.40)  [1440-15-heading-scale.jpg]
+       fix: size headings by level: the h1 largest, one size per level, each level below the one above
+  FAIL off-grid        div.wrap > div.closing__links > div.footer__legal > a:nth-of-type(2)  "Términos"
+       left edge at 721.5px, 10.5px off a common edge of its section at 732px (3 elements, like li:nth-of-type(2))  [1440-27-off-grid.jpg]
+       fix: move it onto the page margin, or the column edge its section uses
+  FAIL section-gaps    section#preguntas / section#orden
+       387px between these sections, +75% against the median 222px  [1440-23-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL phone-number    div.wrap > div.grid.grid--top > div.span-6.stack-5 > a.link  "https://wa.me/51921029988?text=Hola%20Ne"
+       a WhatsApp link calls a number in a real dialable format: "https://wa.me/51921029988?text=Hola%20Ne"; a visitor can dial it and reach a stranger (and 1 more like it: div.span-2.footer__col:nth-of-type(5) > ul > li:nth-of-type(4) > a)  [1440-25-phone-number.jpg]
+       fix: drop the number and its tel: link (a "Request a call" form may stand in), unless the brief gives the number
+  WARN scroll-reveal   section#nosotros > div.wrap > div.grid.grid--top > figure.develop.span-6
+       starts an animation (1.6 s) the moment it is scrolled into view (an IntersectionObserver) on img (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)  [1440-19-scroll-reveal.jpg]
+       fix: show it at rest: no fade, rise or unmask when it is scrolled into view
+  WARN scroll-reveal   section#metodo  "Cómo trabajamos, en 4 fases El mismo pro"
+       starts "opacity" (0.4 s) the moment it is scrolled into view (an IntersectionObserver) on div.mo-ph__words (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)  [1440-12-scroll-reveal.jpg]
+       fix: show it at rest: no fade, rise or unmask when it is scrolled into view
+  WARN pinned          section#metodo > div.wrap.mo-ph  "Cómo trabajamos, en 4 fases El mismo pro"
+       held on screen for 3 screens of scroll (position: sticky) while the page moves on (inside a dealt moment's section, [data-moment]: expected on every kind, two moments at most, house rule; its still is judged under reduced motion)  [1440-28-pinned.jpg]
+       fix: let the section scroll with the page
+  WARN no-visual       section#precios  "Precios y pólizas"
+       pictures, effects and mocks cover 25% of this section; a feature section needs a visual (about 25% or more)  [1440-16-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  WARN cta             section#metodo  "Cómo trabajamos, en 4 fases"
+       a section over 1.5 screens long with no link or button in it  [1440-13-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN copy-buttons    header.nav.nav--split > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary  "Agendar un diagnóstico"
+       "Agendar un diagnóstico" does not start with a verb (book, buy, try, start, get, see...)  [1440-01-copy-buttons.jpg]
+       fix: label buttons with a verb and what the visitor gets ("Book a room", "Start free trial")
+  WARN section-gaps    main#top > section.hero.hero--photo / section#servicios
+       117px between these sections, -47% against the median 222px  [1440-07-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#trabajo / section#metodo
+       298px between these sections, +35% against the median 222px of gaps at a change of ground  [1440-10-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#metodo / section#precios
+       149px between these sections, -33% against the median 222px  [1440-17-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#nosotros / section#preguntas
+       337px between these sections, +52% against the median 222px  [1440-21-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#servicios / section#trabajo
+       uneven space at the edge of a band: 72px outside its edge, 117px inside it (the space on either side of a change of ground reads as one gap only when the two match)  [1440-09-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#trabajo / section#metodo
+       uneven space at the edge of a band: 101px outside its edge, 197px inside it (the space on either side of a change of ground reads as one gap only when the two match)  [1440-11-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN photo-set       main#top > section.hero.hero--photo > picture.hero__bg > img  "photo-f26575836.webp"
+       10 photographs in more than one look: lightness from 0.23 to 0.66; saturation from 0.12 to 0.65; warm and cool photographs mixed (b* -28 to +8); the odd one out is photo-f26575836.webp  [1440-02-photo-set.jpg]
+       fix: grade the photographs to one look (light, colour, warmth), or replace the odd one out
+  WARN photo-credit    (the page text)
+       1 library source (wikimedia): the page credits wikimedia; confirm each shows the client's own product, place or people
+       fix: confirm the library photograph shows the client's own product, place or people; otherwise replace it
+  WARN nav-labels      div.wrap.nav__bar > nav.nav__links > div.nav__item:nth-of-type(2) > a.nav__link  "Trabajo"
+       "Trabajo" opens a section headed "Proyectos de software, CCTV y redes"  [1440-03-nav-labels.jpg]
+       fix: name each nav link after the heading of the section it opens
+  WARN nav-labels      div.wrap.nav__bar > nav.nav__links > div.nav__item:nth-of-type(3) > a.nav__link  "Método"
+       "Método" opens a section headed "Cómo trabajamos, en 4 fases"  [1440-04-nav-labels.jpg]
+       fix: name each nav link after the heading of the section it opens
+  WARN nav-labels      div#root > header.nav.nav--split > div.wrap.nav__bar > a.nav__logo  "NetSurex"
+       "NetSurex" opens a section headed "Software, CCTV y soporte técnico"  [1440-05-nav-labels.jpg]
+       fix: name each nav link after the heading of the section it opens
+  WARN nav-labels      header.nav.nav--split > div.wrap.nav__bar > div.nav__actions > a.nav__link  "Mi orden"
+       "Mi orden" opens a section headed "Estado de tu reparación o proyecto"  [1440-06-nav-labels.jpg]
+       fix: name each nav link after the heading of the section it opens
+  WARN nav-current     div#root > header.nav.nav--split
+       the nav stays on screen with 5 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)  [1440-08-nav-current.jpg]
+       fix: mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls
+  WARN split-align     section#contacto > div.wrap > div.grid.grid--top  "Nombre Email Para quién es Una empresa o"
+       the splits sit two ways: 4 to the top of the taller side ("Software & Apps Apps m", "Precios y pólizas", "Quién dirige NetSurex"); 1 to the middle of the taller side ("Nombre Email Para quié")  [1440-26-split-align.jpg]
+       fix: set every split one way: the text to the top of its visual, or every one centred on it
+  WARN action-repeat   header.nav.nav--split > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary:nth-of-type(2)  "agendar un diagnóstico"
+       "agendar un diagnóstico" shows 2 times on the first screen at 1440px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it  [1440-29-action-repeat.jpg]
+       fix: show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once
+  WARN form-fields     div.grid.grid--top > div.span-6.stack-6:nth-of-type(1) > div.tracker.stack-5:nth-of-type(2) > form.tracker__form
+       the form has no status line (role="status"): sending, sent and errors are never read out  [1440-24-form-fields.jpg]
+       fix: give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)
+
+390x844  21 screens, 1 held section  7 FAIL  7 WARN
+  FAIL no-visual       section#precios  "Precios y pólizas"
+       pictures, effects and mocks cover 14% of this section; a feature section needs a visual (about 25% or more)  [390-06-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL no-visual       section#preguntas  "Preguntas frecuentes sobre NetSurex"
+       no picture, effect or mock in this section; a feature section needs a visual  [390-12-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL card-family     section#preguntas > div.wrap > div.grid.grid--top > div.faq.span-6  "¿Qué servicios ofrece NetSurex?"
+       10 cards of one kind (.span-6) set their titles in 2 faces: figtree (1, like "¿Qué servicios ofrece Ne"), gabarito (6, like "Precios y pólizas")  [390-13-card-family.jpg]
+       fix: draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)
+  FAIL card-family     section#precios > div.wrap > div.grid.grid--top > div.span-6.start-7  "Pólizas de mantenimiento"
+       5 cards of one kind (.start-7) set their titles in 2 faces: gabarito (1, like "Pólizas de mantenimiento"), figtree (1, like "¿Qué servicios ofrece Ne")  [390-07-card-family.jpg]
+       fix: draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)
+  FAIL heading-scale   div.wrap > div.grid.grid--top > div.span-6.start-7 > h3  "Pólizas de mantenimiento"
+       h3 headings in 3 sizes, 16px ("App Multiplataforma de G") to 24px (x1.50)  [390-08-heading-scale.jpg]
+       fix: size headings by level: the h1 largest, one size per level, each level below the one above
+  FAIL section-gaps    section#precios / section#nosotros
+       414px between these sections, +165% against the median 156px  [390-09-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL photo-upscale   div.wrap > div.grid.grid--top > div.frame.frame--photo > img.frame__img:nth-of-type(1)  "img: Código de un programa en un monitor"
+       photo-f62049414-960.webp: 779x519 shown at 342x908, blown up 1.75x  [390-02-photo-upscale.jpg]
+       fix: use a source at least as wide as the picture is shown (twice that for sharp screens)
+  WARN scroll-reveal   section#nosotros > div.wrap > div.grid.grid--top > figure.develop.span-6
+       starts an animation (1.6 s) the moment it is scrolled into view (an IntersectionObserver) on img (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)  [390-10-scroll-reveal.jpg]
+       fix: show it at rest: no fade, rise or unmask when it is scrolled into view
+  WARN scroll-reveal   section#metodo  "Cómo trabajamos, en 4 fases El mismo pro"
+       starts "opacity" (0.4 s) the moment it is scrolled into view (an IntersectionObserver) on div.mo-ph__words (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)  [390-04-scroll-reveal.jpg]
+       fix: show it at rest: no fade, rise or unmask when it is scrolled into view
+  WARN pinned          section#metodo > div.wrap.mo-ph  "Cómo trabajamos, en 4 fases El mismo pro"
+       held on screen for 3 screens of scroll (position: sticky) while the page moves on (inside a dealt moment's section, [data-moment]: expected on every kind, two moments at most, house rule; its still is judged under reduced motion)  [390-14-pinned.jpg]
+       fix: let the section scroll with the page
+  WARN cta             section#metodo  "Cómo trabajamos, en 4 fases"
+       a section over 1.5 screens long with no link or button in it  [390-05-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN section-gaps    section#nosotros / section#preguntas
+       246px between these sections, +58% against the median 156px  [390-11-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#servicios / section#trabajo
+       uneven space at the edge of a band: 48px outside its edge, 94px inside it (the space on either side of a change of ground reads as one gap only when the two match)  [390-03-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN photo-set       main#top > section.hero.hero--photo > picture.hero__bg > img  "photo-f26575836-780x975.webp"
+       12 photographs in more than one look: lightness from 0.17 to 0.53; saturation from 0.00 to 0.77; warm and cool photographs mixed (b* -46 to +7); the odd one out is photo-f26575836-780x975.webp  [390-01-photo-set.jpg]
+       fix: grade the photographs to one look (light, colour, warmth), or replace the odd one out
+
+first screen at 1280, 1152, 1024, 896, 768  0 FAIL  0 WARN
+
+the page at 320x640, walked for what runs past the screen's edge  2 FAIL
+  FAIL off-viewport    [320] div#root > header.nav.nav--split > div.wrap.nav__bar  "Saltar al contenido NetSurex Agendar un "
+       at 320px wide it runs 30px past the screen's right edge (the page is 374px wide and scrolls sideways)  [narrow-320-01-off-viewport.jpg]
+       fix: keep it inside the screen at this width: let it shrink, wrap or stack
+  FAIL off-viewport    [320] div.closing__links > div.footer__legal > a.credits  "Fotografías vía Wikimedia Commons"
+       at 320px wide it runs 54px past the screen's right edge (the page is 374px wide and scrolls sideways)  [narrow-320-02-off-viewport.jpg]
+       fix: keep it inside the screen at this width: let it shrink, wrap or stack
+
+checks
+  PASS assets                 PASS shader-lint            PASS gl-fallback            
+  PASS empty-visual           PASS hero-fill              PASS flush                  
+  PASS placeholder            PASS sample-label           PASS caption                
+  PASS credit-wall            PASS nav                    PASS nav-covers             
+  PASS spill                  FAIL off-viewport           PASS fold-card              
+  SKIP hover-spill            PASS overlap-text           PASS collide                
+  PASS tap-size               PASS row-gap                PASS cut-text               
+  PASS fold-cut               PASS marquee                SKIP scroll-linked          
+  WARN scroll-reveal          WARN pinned                 SKIP loop-pause             
+  SKIP reduced-motion         PASS hidden-content         PASS webgl                  
+  FAIL no-visual              PASS text-only              PASS card-visual            
+  SKIP hidden-visual          FAIL card-family            PASS card-layout            
+  PASS nesting                PASS effect-repeat          PASS ui-fit                 
+  PASS ui-centre              PASS dark-ground            PASS button-styles          
+  PASS button-shape           PASS same-action            PASS button-picture         
+  WARN cta                    PASS pricing-tiers          PASS copy-headline          
+  PASS copy-fact              FAIL copy-headings          WARN copy-buttons           
+  PASS copy-actions           FAIL heading-scale          PASS stagger                
+  PASS top-stagger            FAIL off-grid               PASS col-edge               
+  PASS right-edge             PASS centre-axis            PASS tilt                   
+  PASS contrast               PASS text-contrast          PASS body-size              
+  PASS busy-ground            FAIL section-gaps           PASS proximity              
+  PASS hole                   PASS links                  SKIP forms                  
+  FAIL photo-upscale          WARN photo-set              WARN photo-credit           
+  PASS nav-family             WARN nav-labels             PASS link-styles            
+  PASS heading-align          PASS label-centre           PASS fake-button            
+  PASS stranded-action        PASS orphan                 PASS unit-break             
+  PASS tab-wrap               PASS effects-fit            PASS fade-cut               
+  PASS photo-weight           PASS copy-length            WARN nav-current            
+  PASS progress-bar           PASS photo-repeat           PASS button-contrast        
+  PASS photo-print            PASS grounds                WARN split-align            
+  PASS fact-agree             PASS fold-action            PASS action-count           
+  PASS one-screen             SKIP hover                  SKIP hover-move             
+  PASS product-shown          PASS same-object            PASS font-load              
+  PASS visual-caption         PASS visual-empty           PASS effect-kind            
+  PASS hero-enter             PASS moment-none            PASS street-number          
+  PASS postcode               PASS coordinates            PASS company-number         
+  FAIL phone-number           PASS hero-screen            PASS section-height         
+  PASS section-air            PASS one-section            PASS one-heading            
+  PASS container-edges        PASS row-lines              PASS split-pair             
+  PASS motion-layer           PASS count-text             PASS loop-cycle             
+  PASS section-tile           PASS empty-area             PASS a11y-name              
+  PASS img-alt                PASS field-label            PASS heading-order          
+  PASS tabindex               PASS focus-ring             PASS focus-visible          
+  PASS focus-hidden           PASS skip-link              PASS menu-toggle            
+  PASS lang                   PASS page-meta              PASS share-meta             
+  WARN action-repeat          PASS map-link               PASS open-now               
+  PASS assumed                PASS run-on                 WARN form-fields            
+  PASS form-send              
+
+total  17 FAIL  29 WARN  (crops and report.json in /tmp/taste-skill-consistency/localhost-5173)

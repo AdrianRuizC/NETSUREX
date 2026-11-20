@@ -1,0 +1,10 @@
+{
+ "page": null,
+ "dir": "/home/aironspider/WordSpace/NetSurex/web",
+ "kind": "service",
+ "start": "2026-11-12T21:15:06.679Z",
+ "by": "start.mjs",
+ "url": "http://localhost:5173/",
+ "category": "servicios de software, CCTV, redes, soporte técnico y reparación de equipos, con pólizas de mantenimiento",
+ "primary": "Agendar un diagnóstico"
+}
